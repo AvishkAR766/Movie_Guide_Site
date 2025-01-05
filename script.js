@@ -2,7 +2,7 @@ const searchForm = document.querySelector("form");
 const movieContainer = document.querySelector(".movie-container");
 const input = document.querySelector(".inputbox");
 
-// Function to show movie details using OMDB API
+
 const getMovieInfo = async (movie) => {
     const myApiKey = "cdc6a378";
     const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movie)}&apikey=${myApiKey}`;
@@ -20,7 +20,7 @@ const getMovieInfo = async (movie) => {
     }
 };
 
-// Function to display movie data on screen
+
 const showMovieData = (data) => {
     movieContainer.innerHTML = "";
 
@@ -48,12 +48,12 @@ const showMovieData = (data) => {
     `;
 };
 
-// Function to display error messages
+
 const showError = (message) => {
     movieContainer.innerHTML = `<p class="error-message">${message}</p>`;
 };
 
-// Adding event listener to search form
+
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const movieName = input.value.trim();
@@ -64,7 +64,7 @@ searchForm.addEventListener("submit", (e) => {
     }
 });
 
-// Clear input after search
+
 searchForm.addEventListener("submit", () => {
     input.value = "";
 });
